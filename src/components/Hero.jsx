@@ -6,8 +6,31 @@ const Hero = () => {
     return (
         <section id="hero" className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
             {/* Background Glows */}
-            <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none" />
-            <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px] pointer-events-none" />
+            <motion.div
+                animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.2, 0.3],
+                }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none"
+            />
+            <motion.div
+                animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.1, 0.2, 0.1],
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                }}
+                className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px] pointer-events-none"
+            />
 
             <div className="text-center max-w-4xl mx-auto z-10">
                 <motion.div
@@ -60,7 +83,7 @@ const Hero = () => {
                         View Projects <ArrowRight size={20} />
                     </a>
                     <a
-                        href="#"
+                        href="https://drive.google.com/file/d/1yRRsM1RrQF7rdCiUM3NridJBWz7Jw3bl/view?usp=sharing"
                         className="px-8 py-3 rounded-full bg-white/5 text-white border border-white/10 font-medium hover:bg-white/10 transition-all flex items-center gap-2 w-full sm:w-auto justify-center"
                     >
                         Download Resume <Download size={20} />

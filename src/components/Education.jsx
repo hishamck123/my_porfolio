@@ -20,6 +20,7 @@ const Education = () => {
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
+                    whileHover={{ scale: 1.02 }}
                     viewport={{ once: true }}
                     className="p-6 rounded-2xl bg-white/5 border border-white/5 flex items-start gap-4 hover:border-primary/30 transition-colors"
                 >
@@ -36,6 +37,7 @@ const Education = () => {
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
+                    whileHover={{ scale: 1.02 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
                     className="p-6 rounded-2xl bg-white/5 border border-white/5 flex items-start gap-4 hover:border-primary/30 transition-colors"

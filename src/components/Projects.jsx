@@ -49,13 +49,20 @@ const Projects = () => {
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{ y: -10 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
                         className="group relative rounded-2xl overflow-hidden bg-surface border border-white/5 hover:border-primary/50 transition-all card-hover"
                     >
                         {/* Image Placeholder - gradient for now */}
-                        <div className="h-48 w-full bg-gradient-to-br from-gray-800 to-gray-900 group-hover:from-gray-800 group-hover:to-surface transition-colors flex items-center justify-center">
-                            <span className="text-white/20 font-display text-4xl font-bold">{index + 1}</span>
+                        <div className="h-48 w-full bg-gradient-to-br from-gray-800 to-gray-900 group-hover:from-gray-800 group-hover:to-surface transition-colors flex items-center justify-center overflow-hidden">
+                            <motion.span
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
+                                className="text-white/20 font-display text-4xl font-bold"
+                            >
+                                {index + 1}
+                            </motion.span>
                         </div>
 
                         <div className="p-6">

@@ -22,6 +22,23 @@ const Navbar = () => {
         { name: 'Contact', href: '#contact' },
     ];
 
+    const menuVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: -10 },
+        visible: { opacity: 1, y: 0 }
+    };
+
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass py-4' : 'bg-transparent py-6'
@@ -33,23 +50,34 @@ const Navbar = () => {
                 </a>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={menuVariants}
+                    className="hidden md:flex items-center gap-8"
+                >
                     {navLinks.map((link) => (
-                        <a
+                        <motion.a
+                            variants={itemVariants}
                             key={link.name}
                             href={link.href}
                             className="text-sm font-medium text-secondary hover:text-white transition-colors"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             {link.name}
-                        </a>
+                        </motion.a>
                     ))}
-                    <a
-                        href="#"
+                    <motion.a
+                        variants={itemVariants}
+                        href="https://drive.google.com/file/d/1yRRsM1RrQF7rdCiUM3NridJBWz7Jw3bl/view?usp=sharing"
                         className="px-5 py-2 rounded-full border border-white/10 text-sm font-medium hover:bg-white/5 transition-colors flex items-center gap-2"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         Resume <Download size={16} />
-                    </a>
-                </div>
+                    </motion.a>
+                </motion.div>
 
                 {/* Mobile Menu Button */}
                 <button
@@ -83,7 +111,7 @@ const Navbar = () => {
                             ))}
                             <hr className="border-white/10" />
                             <a
-                                href="#"
+                                href="https://drive.google.com/file/d/1yRRsM1RrQF7rdCiUM3NridJBWz7Jw3bl/view?usp=sharing"
                                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white/5 text-white font-medium"
                                 onClick={() => setIsOpen(false)}
                             >

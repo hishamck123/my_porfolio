@@ -42,6 +42,7 @@ const Experience = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.2 }}
+                        whileHover={{ scale: 1.02 }}
                         className={`relative flex flex-col md:flex-row gap-8 mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                             }`}
                     >
