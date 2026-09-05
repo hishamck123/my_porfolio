@@ -11,6 +11,7 @@ export default {
         surface: "#15151C",
         primary: "#4FD1FF",
         secondary: "#B3B3B3",
+        accent: "#FF7F50", // Coral accent color
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

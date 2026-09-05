@@ -70,7 +70,7 @@ const Navbar = () => {
                     ))}
                     <motion.a
                         variants={itemVariants}
-                        href="https://drive.google.com/file/d/1yRRsM1RrQF7rdCiUM3NridJBWz7Jw3bl/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1HYedxblfUBnuqcgN-kgYslXRxVFusrpU/view?usp=sharing"
                         className="px-5 py-2 rounded-full border border-white/10 text-sm font-medium hover:bg-white/5 transition-colors flex items-center gap-2"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -111,7 +111,7 @@ const Navbar = () => {
                             ))}
                             <hr className="border-white/10" />
                             <a
-                                href="https://drive.google.com/file/d/1yRRsM1RrQF7rdCiUM3NridJBWz7Jw3bl/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1HYedxblfUBnuqcgN-kgYslXRxVFusrpU/view?usp=sharing"
                                 className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-white/5 text-white font-medium"
                                 onClick={() => setIsOpen(false)}
                             >

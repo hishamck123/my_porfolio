@@ -27,9 +27,9 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="py-20 relative">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+        <section id="about" className="py-20 relative max-w-6xl mx-auto px-4">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div className="lg:col-span-5">
                     <motion.h2
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ const About = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
@@ -62,9 +62,9 @@ const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/20 transition-colors"
+                            className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/20 transition-colors group"
                         >
-                            <div className="mb-4 p-3 rounded-xl bg-white/5 w-fit">
+                            <div className="mb-4 p-3 rounded-xl bg-white/5 w-fit group-hover:scale-110 transition-transform">
                                 {feature.icon}
                             </div>
                             <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>

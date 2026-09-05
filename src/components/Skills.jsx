@@ -13,6 +13,15 @@ const Skills = () => {
         { name: 'Problem Solving', level: 'Advanced' },
     ];
 
+    const getLevelWidth = (level) => {
+        switch (level) {
+            case 'Advanced': return '90%';
+            case 'Intermediate': return '70%';
+            case 'Basic': return '40%';
+            default: return '50%';
+        }
+    };
+
     return (
         <section id="skills" className="py-20 bg-white/5 relative overflow-hidden">
             {/* Background Decorative */}
@@ -41,11 +50,24 @@ const Skills = () => {
                         whileHover={{ scale: 1.05 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
-                        className="p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/50 transition-all group relative overflow-hidden"
+                        className="p-6 rounded-2xl bg-surface border border-white/5 hover:border-primary/50 transition-all group relative overflow-hidden flex flex-col justify-between h-full"
                     >
                         <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <h3 className="text-lg font-semibold text-white relative z-10">{skill.name}</h3>
-                        <p className="text-sm text-secondary relative z-10 mt-1">{skill.level}</p>
+                        
+                        <div className="relative z-10 mb-4">
+                            <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
+                            <p className="text-xs text-secondary mt-1">{skill.level}</p>
+                        </div>
+                        
+                        <div className="relative z-10 w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                            <motion.div 
+                                className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: getLevelWidth(skill.level) }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, delay: 0.2 + (index * 0.1) }}
+                            />
+                        </div>
                     </motion.div>
                 ))}
             </div>

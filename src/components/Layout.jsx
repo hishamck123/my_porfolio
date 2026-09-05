@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
                 {children}
             </main>
             <footer className="py-8 text-center text-secondary text-sm">
-                <p>&copy; {new Date().getFullYear()} Mohammed Hisham CK. Built with user & love.</p>
+                <p>&copy; {new Date().getFullYear()} Mohammed Hisham CK. Built with React & Tailwind CSS.</p>
             </footer>
         </div>
     );
